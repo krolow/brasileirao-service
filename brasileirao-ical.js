@@ -198,8 +198,7 @@ function generateFilename (serie, team) {
     + '.ical';
 }
 
-
-module.exports = function (context, req, res) {
+function app (context, req, res) {
   var serie = context.data.serie;
   var team = context.data.team
   if (!validate({ serie: serie, team: team })) {
@@ -232,3 +231,5 @@ module.exports = function (context, req, res) {
       }));
     });
 }
+
+module.exports = app;
